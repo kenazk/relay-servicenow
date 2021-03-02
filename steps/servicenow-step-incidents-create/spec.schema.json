@@ -1,0 +1,64 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "servicenow": {
+      "type": "object",
+      "description": "A mapping of ServiceNow account configuration.",
+      "properties": {
+        "connection": {
+          "type": "object",
+          "x-relay-connectionType": "servicenow",
+          "description": "A Relay ServiceNow connection to use",
+          "properties": {
+            "host": {
+              "type": "string",
+              "description": "ServiceNow instance host"
+            },
+            "secretAccessKey": {
+              "type": "string",
+              "description": "ServiceNow user"
+            },
+            "password": {
+              "type": "string",
+              "description": "ServiceNow password"
+            }
+          },
+          "required": [
+            "host", 
+            "user",
+            "password"
+          ]
+        }
+      },
+      "required": [
+        "connection"
+      ]
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Short description of the incident"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the incident"
+    },
+    "priority": {
+      "type": "integer",
+      "description": "Priority of the incident (e.g. 1)"
+    },
+    "impact": {
+      "type": "integer",
+      "description": "Impact of the incident (e.g. 3)"
+    },
+    "state": {
+      "type": "integer",
+      "description": "State of the incident"
+    }
+  },
+  "required": [
+    "shortDescription"
+  ],
+  "additionalProperties": false
+}
